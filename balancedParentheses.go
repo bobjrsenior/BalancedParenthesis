@@ -9,11 +9,19 @@ type node struct {
 }
 
 func main() {
-	result := checkBalance("[](){}[[[]]]{(()){}}")
-	if result {
-		fmt.Println("YES")
-	}else{
-		fmt.Println("NO")
+	// Sample test cases
+	testCases := []string{"({[]})", "([)]", "((((())))){}[]", "[](){}[[[]]]{(()){}}", "{([[]])}[{{]}()"}
+	// Cycle through every test case
+	for _, testCase := range testCases {
+		fmt.Printf("Checking: %s\n", testCase)
+		
+		// Grab the result and print it
+		result := checkBalance(testCase)
+		if result {
+			fmt.Println("YES")
+		}else{
+			fmt.Println("NO")
+		}
 	}
 }
 
